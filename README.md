@@ -1,18 +1,52 @@
-# 🕵️ Steganography Tool
+# 🖼️ Steganography Tool (Python GUI)
 
-A Python-based Steganography Tool with a modern GUI built using **Tkinter**.  
-This tool allows you to **hide secret messages or files inside images** and extract them securely.
+A Python-based **Image Steganography Tool** with a modern Tkinter GUI that allows secure embedding and extraction of secret messages or files inside images using the Least Significant Bit (LSB) technique.
+
+This project demonstrates practical implementation of data hiding techniques combined with optional encryption for enhanced confidentiality.
 
 ---
 
-## ✨ Features
-- Hide and extract text messages in images
-- Hide and extract files inside images
-- Password-based encryption support (upcoming feature 🚧)
-- Supports PNG, JPG, JPEG, BMP formats
-- Dark-themed modern GUI with drag & drop support
-- Cross-platform (Windows, Linux, Mac)
+## 🔐 Key Features
 
+- Hide and extract **text messages** inside images
+- Hide and extract **files** within image data
+- LSB-based steganography implementation
+- Password-based encryption support
+- Modern dark-themed Tkinter GUI
+- Drag-and-drop image support
+- Cross-platform compatibility (Windows / Linux / macOS)
+
+---
+
+## 🛠️ Tech Stack
+
+**Language:** Python  
+**GUI Framework:** Tkinter  
+**Steganography Method:** LSB (Least Significant Bit) Encoding  
+**Encryption:** AES-based password protection  
+**Image Processing:** PIL (Pillow)
+
+---
+
+## 🧠 How It Works
+
+1. Select an image (PNG/BMP recommended for lossless encoding)
+2. Enter secret message or select file to embed
+3. (Optional) Apply password-based encryption
+4. Tool modifies pixel LSB values to encode hidden data
+5. Encoded image is saved without visible distortion
+
+For extraction:
+
+1. Load encoded image
+2. Enter password (if encrypted)
+3. Tool reads pixel LSB values
+4. Decodes and reconstructs original message/file
+
+Core logic is implemented inside:
+core/stego_core.py
+GUI logic is handled in:
+gui/gui.py
 ---
 
 ## 📂 Project Structure
@@ -43,6 +77,14 @@ This tool allows you to **hide secret messages or files inside images** and extr
 
 ### 4. Run the tool:
    python main.py
+
+## ⚠ Important Notes
+
+- PNG or BMP images are recommended for best results (lossless formats).
+- Avoid using compressed formats like JPG for sensitive data embedding.
+- This tool is developed for educational and demonstration purposes.
+
+---
 
 ## 📜 License
 
